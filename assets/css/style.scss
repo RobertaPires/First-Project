@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* #323131 - tom de preto
+- PRINCIPAIS -
+#c80015 - vermelho mais escuro
+#ff002c - > vermelho que mais parece rosa, mas vermelho*/
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #c80015;
+  height: 165vh !important;
+  max-height: 85rem;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: white;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(50deg, #aa3d3d, #ff002bd3);
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+div,
+img,
+a {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+    margin-bottom: 0.5%;
+    font-size: 0.9rem;
+    width: 95%;
+}
+.diagonal{
+    height: 100vh;
+    width: 100vw;
+    background-color: #323131;
+    position: fixed;
+    clip-path: polygon(0 0, 100% 0%, 100% 58%, 0 30%);
+    
+}
+.hobby-titulo{
+    color: #ff002bd3;
+    font-size: 1.5rem;
+}
+@mixin backgrounds {
+    margin: 2% 0;
+    padding: 1.5%;
+    &::nth-of-type(1){
+       background-color: #06d69e1e;
+       border-left: 0.2rem solid #06d6a0;
+    }
+    &::nth-of-type(2){
+        background-color: #e639471e;
+        border-left: 0.2rem solid  #e63946;
+    }
+    &::nth-of-type(3){
+        background-color: #ffd1661e;
+        border-left: 0.2rem solid #ffe166;
+    }
+    
+    @media screen and (max-width:480px) {
+        width: 90%;
+    }
+}
+@mixin getTitle{
+    font-size: 1rem;
+    margin-bottom: 0.5%;
+}
+.container{
+    height: 120%;/*A verificar*/
+    width: 50vw;
+    background-color: antiquewhite;
+    position:absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 5% auto;
+    box-shadow: rgba(0,0,0,0.5) -18px 14px 20px;
+    display: flex;
+    .coluna1{
+        height: 100%;
+        width: 45%;
+        .image{
+            width: 70%;
+            display: block;
+            margin: 0 auto;
+            
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 10%;
+            }
+        }
+        .perfil{
+            height: 27%;
+            background-color: #141414;
+            padding: 5% 10% 0 10%;
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;
+            .titulo{
+                h1{
+                    color:#f0f0f0;
+                    font-size: 1.5rem;
+                    letter-spacing: 0.04rem;
+                }
+                h3{
+                    color:#ff002c;
+                    font-size:1rem;
+                }
+            }
+            .info-container{
+                margin-top: 7%;
+                color:#f0f0f0;
+                .info{
+                    margin-top: 4%;
+                    i{
+                        margin-right: 2%;
+                        width: 1rem;
+                    }
+                }
+            }
+        }
+        .hobbies{
+            height: 30%;
+            margin: 10%;
+            .grid{
+                margin-top: 18%;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                .hobby{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: 45%;
+                    i{
+                        margin-bottom: 8%;
+                        font-size:1.4rem;
+                    }
+                }
+            }
+        }
+    }
+    .coluna2{
+        width: 65%;
+        margin: 2%;
+        .bio{
+            background: #ff002b8a;
+            border-radius: 8%;
+            p{
+                padding: 8%;
+                font-weight: 400;
+            }
+        }
+        .skills{
+            .skills-container{
+                display: flex;
+                gap: 5%;
+                margin-top: 2%;
+                .skill{
+                    border:0.2rem solid #e63946;
+                    border-radius: 2rem;
+                    padding: 1% 0;
+                    width: 22%;
+                    text-align: center;
+                }
+            }
+        }
+        .experiences{
+         margin: 4% 0;
+         .experience-container{
+             .exp{
+                 @include backgrounds();
+                 .title{
+                     @include getTitle();
+                 }
+                 .details{
+                     display: flex;
+                 }
+             }
+         }
+        }
+        .cursos{
+            margin: 2% 0;
+            .cursos-container{
+                .curso{
+                    @include backgrounds();
+                    .title{
+                        @include getTitle();
+                    }
+                    .details{
+                        display: flex;
+                    }
+                }
+            }
+        }
+        .educacoes{
+            .educacao-container{
+                .educacao{
+                    @include backgrounds();
+                    .title{
+                        @include getTitle();
+                    }
+
+                    .details{
+                        display: flex;
+                        span{
+                            &:first-of-type{
+                                width: 80%;
+                            }
+                            font-size: 0.9rem;
+                            margin-top: 0.5%;
+                        }
+                    }
+                }
+            }
+        }
+        .educacao-primaria{
+            ul{
+                margin-top: 1%;
+                display: flex;
+                li{
+                    @include backgrounds();
+                }
+            }
+        }
+    }
+
+}
